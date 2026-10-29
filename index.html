@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Info Converter</title>
+</head>
+<body>
+    <h1>Weather Info Converter</h1>
+    <button id="load">Load Weather</button>
+    <pre id="output"></pre>
 
+    <script>
+        document.getElementById("load").addEventListener("click", async () => {
+            const response = await fetch("weather.json");
+            const data = await response.json();
+
+            document.getElementById("output").textContent =
+                JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>
