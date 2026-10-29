@@ -64,13 +64,13 @@ cityInput.addEventListener("input", async () => {
 
             div.className = "suggestion";
 
-            div.textContent =
-                `${place.name}, ${place.country}`;
+           div.textContent =
+    `${place.name}${place.admin1 ? ", " + place.admin1 : ""}, ${place.country}`;
 
             div.onclick = () => {
 
                 cityInput.value =
-                    `${place.name}`;
+`${place.name}${place.admin1 ? ", " + place.admin1 : ""}`;
 
                 suggestions.innerHTML = "";
 
